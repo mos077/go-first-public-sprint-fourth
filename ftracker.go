@@ -107,7 +107,7 @@ func WalkingSpentCalories(action int, duration, weight, height float64) float64 
 	// * 0.029 * ВесСпортсменаВКг) * ВремяТренировкиВЧасах * minInH)
 	speed := meanSpeed(action, duration) // обьявил переменную и записал в ней среднуюю скорость
 	speedInMetrs := math.Pow(speed, 2)   // вычислил среднюю скорость в метрах
-	caloriesWalking := ((walkingCaloriesWeightMultiplier * weight + (speedInMetrs/height)*walkingSpeedHeightMultiplier*weight) * duration * minInH)
+	caloriesWalking := ((walkingCaloriesWeightMultiplier*weight + (speedInMetrs/height)*walkingSpeedHeightMultiplier*weight) * duration * minInH)
 	return caloriesWalking
 }
 
@@ -122,7 +122,7 @@ const (
 // Параметры:
 //
 // lengthPool int — длина бассейна в метрах.
-// countPool int — сколько раз пользователь переплыл бассейн.
+// countPool int — сколько раз пользователь переплыл
 // duration float64 — длительность тренировки в часах.
 func swimmingMeanSpeed(lengthPool, countPool int, duration float64) float64 {
 	if duration == 0 {
